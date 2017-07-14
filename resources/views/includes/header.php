@@ -34,27 +34,27 @@
             </label>
         <!--   END bottom in responsive menu    -->
             <li class="item-menu shop">
-                <i href="shop.html">shop</i>
+                <i href="/">shop</i>
                 <ul class="sub-menu">
                     <li>
-                        <h3 class="title-sub-menu"><a href="index.html">Home</a></h3>
+                        <h3 class="title-sub-menu"><a href="/">Home</a></h3>
                     </li>
                     <li>
-                        <h3 class="title-sub-menu"><a href="blog.html">Blog</a></h3>
+                        <h3 class="title-sub-menu"><a href="/">Blog</a></h3>
                     </li>
                     <li>
-                        <h3 class="title-sub-menu"><a href="about.html">About</a></h3>
+                        <h3 class="title-sub-menu"><a href="about">About</a></h3>
                     </li>
                     <li>
-                        <h3 class="title-sub-menu"><a href="contact.html">Contact</a></h3>
+                        <h3 class="title-sub-menu"><a href="contact">Contact</a></h3>
                     </li>
                     <li>
-                        <h3 class="title-sub-menu"><a href="shop.html">Shop</a></h3>
+                        <h3 class="title-sub-menu"><a href="/">Shop</a></h3>
                     </li>
                 </ul>
             </li>
             <li class="item-menu logo">
-              <a href="index.html">LOGO<br><span>Short Description</span></a>
+              <a href="/"><?= APPNAME; ?><br><span><?= SLOGAN; ?></span></a>
             </li>
             <li class="item-menu nav-icons">
                 <label for="search-toggle"><i class="fa fa-search button-search" aria-hidden="true"></i></label>

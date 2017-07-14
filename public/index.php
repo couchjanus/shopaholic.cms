@@ -1,20 +1,30 @@
 <?php
+echo "SERVER_NAME: ".$_SERVER['SERVER_NAME'].'<br />';
+echo "PHP_SELF: ".$_SERVER['PHP_SELF'].'<br />';
+echo "DOCUMENT_ROOT: ".$_SERVER['DOCUMENT_ROOT'].'<br />';
+echo '$argv: ';
+var_dump($argv).'<br />';
+echo '<br />';
+echo '$_GET: ';
+var_dump($_GET);
+echo '<br />';
 
-// if (function_exists('date_default_timezone_set'))
-// date_default_timezone_set('Europe/Kiev');
+// switch($_GET['action'])
+// {
+// 	case "about" :
+// 		require_once("about.php"); // страница "О Нас"
+// 		break;
+// 	case "contacts" :
+// 		require_once("contacts.php"); // страница "Контакты"
+// 		break;
+// 	case "feedback" :
+// 		require_once("feedback.php"); // страница "Обратная связь"
+// 		break;
+// 	default :
+// 		require_once("404.php"); // страница "404"
+// 	break;
+// }
 
-// // 1. Общие настройки
-// ini_set('display_errors',1);
-// error_reporting(E_ALL);
-
-// //Запускаем сессию
-// session_start();
-
-// // Поключение файлов системы
-// require realpath(__DIR__.'/../').'/core/'.'route.php';
-
-
-
-$greeting = 'Yo, World!';
-
-require 'index.view.php';
+echo "REQUEST_URI: ".$_SERVER['REQUEST_URI'].'<br />';
+// Поключение файлов системы
+// require_once realpath(__DIR__.'/../').'/core/'.'bootstrap.php';
