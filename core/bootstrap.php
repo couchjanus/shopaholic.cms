@@ -9,6 +9,7 @@ error_reporting(E_ALL);
 
 //Запускаем сессию
 session_start();
-echo 'Hello bootstrap!';
-// require_once realpath(__DIR__).'/../config/app.php';
-// require_once realpath(__DIR__).'/route.php';
+require_once realpath(__DIR__).'/../config/app.php';
+require_once CONTROLLERS.'/View.php';
+require_once CONTROLLERS.'/Controller.php';
+require_once realpath(__DIR__).'/route.php';

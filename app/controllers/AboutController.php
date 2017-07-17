@@ -1,4 +1,13 @@
 <?php
-echo "<h1>About Page</h1>";
-// $title = "About Page";
-// require_once(VIEWS . '/about.php');
+
+class AboutController extends Controller
+{
+  public $title =  "About StartUp Page";
+
+	public function index()
+	{
+        $this->_view->render('about', ['title'=>$this->title]);
+        // require_once(VIEWS . '/about.php');
+	}
+
+}
