@@ -5,3 +5,4 @@ define('VIEWS', realpath(__DIR__.'/../resources/views/'));
 define('CONTROLLERS', realpath(__DIR__.'/../app/controllers/'));
 define('APPNAME', 'SHOPAHOLIC');
 define('SLOGAN', 'Shopaholic Never Sleeps!');
+define('BDCONNECTION', 'mysql');

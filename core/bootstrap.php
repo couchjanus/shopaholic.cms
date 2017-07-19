@@ -10,6 +10,7 @@ error_reporting(E_ALL);
 //Запускаем сессию
 session_start();
 require_once realpath(__DIR__).'/../config/app.php';
+require_once ROOT.'/core/Connection.php';
 require_once CONTROLLERS.'/View.php';
 require_once CONTROLLERS.'/Controller.php';
 require_once realpath(__DIR__).'/route.php';

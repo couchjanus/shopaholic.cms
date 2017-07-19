@@ -1,19 +1,10 @@
 <?php
 
-// define('ROUTES', [
-// 	'' => 'HomeController.php',
-// 	'about' => 'AboutController.php',
-// 	'contact' => 'ContactController.php'
-// ]);
-
 define('ROUTES', [
 	'' => 'HomeController@index',
 	'about' => 'AboutController@index',
 	'contact' => 'ContactController@index'
 ]);
-// $router->get('', 'IndexController@index');
-// $router->get('posts', 'PostsController@index');
-// $router->get('post/{id}', 'PostsController@view');
 
 function uri()
     {
@@ -36,8 +27,6 @@ $direct = direct($uri);
 list($controller, $action) = explode('@', $direct);
 
 $controllerFile = CONTROLLERS.'/'.$controller.'.php';
-
-// if(file_exists($controllerFile)){
 try{
 	 include_once($controllerFile);
 	 $controller = new $controller;
@@ -47,14 +36,6 @@ try{
 	  		);
 	 }
 	 $controller->$action();
-	$result = true;
 } catch (Exception $e){
-	$result = false;
 	echo 'Выброшено исключение: ',  $e->getMessage(), "\n";
-
-} finally{
-	return  $result;
 }
-
-//   }
-// else echo 'No controller defined for this path';
