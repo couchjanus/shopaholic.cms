@@ -13,4 +13,7 @@ require_once realpath(__DIR__).'/../config/app.php';
 require_once ROOT.'/core/Connection.php';
 require_once CONTROLLERS.'/View.php';
 require_once CONTROLLERS.'/Controller.php';
+require_once MODELS.'/Product.php';
+require_once CONTROLLERS.'/AdminController.php';
+require_once CONTROLLERS.'/AdminProductsController.php';
 require_once realpath(__DIR__).'/route.php';

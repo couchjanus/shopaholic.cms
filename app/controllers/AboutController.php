@@ -7,7 +7,7 @@ class AboutController extends Controller
 	public function index()
 	{
         $this->_view->render('about', ['title'=>$this->title]);
-        // require_once(VIEWS . '/about.php');
+        
 	}
 
 }

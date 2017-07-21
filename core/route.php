@@ -3,7 +3,10 @@
 define('ROUTES', [
 	'' => 'HomeController@index',
 	'about' => 'AboutController@index',
-	'contact' => 'ContactController@index'
+	'contact' => 'ContactController@index',
+	'admin' => 'AdminController@index',
+	'admin/products' => 'AdminProductsController@index',
+	'admin/products/add' => 'AdminProductsController@add',
 ]);
 
 function uri()
