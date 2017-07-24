@@ -46,8 +46,6 @@ include_once VIEWS.'/includes/admin/header.php';
                 </select>
                 <input type=submit name="submit" value="Сохранить" id="add_btn">
             </form>
-
-<div class="appendix"></div>
 </article>
 
 <?php

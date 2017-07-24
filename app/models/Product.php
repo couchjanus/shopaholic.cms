@@ -108,4 +108,87 @@ class Product {
         }
     }
 
+    /**
+     * Выбираем товар по идентификатору
+     *
+     * @param $productId
+     * @return mixed
+     */
+    public static function getProductById ($productId) {
+
+        $con = Connection::make();
+
+        $sql = "
+               SELECT id, name, code, price, brand,
+                description, is_new, category_id, status FROM products
+                    WHERE id = :id
+               ";
+
+        $res = $con->prepare($sql);
+        $res->bindParam(':id', $productId, PDO::PARAM_INT);
+        $res->execute();
+
+        $products = $res->fetch(PDO::FETCH_ASSOC);
+
+        return $products;
+    }
+
+    /**
+     * Изменение товара
+     *
+     * @param $id
+     * @param $options
+     * @return bool
+     */
+    public static function editProduct ($id, $options) {
+
+        $con = Connection::make();
+
+        $sql = "
+                UPDATE products
+                SET
+                    name = :name,
+                    category_id = :category,
+                    code = :code,
+                    price = :price,
+                    brand = :brand,
+                    description = :description,
+                    is_new = :is_new,
+                    status = :status
+                WHERE id = :id
+                ";
+
+        $res = $con->prepare($sql);
+
+        $res->bindParam(':name', $options['name'], PDO::PARAM_STR);
+        $res->bindParam(':category', $options['category'], PDO::PARAM_INT);
+        $res->bindParam(':code', $options['code'], PDO::PARAM_INT);
+        $res->bindParam(':price', $options['price'], PDO::PARAM_INT);
+        $res->bindParam(':brand', $options['brand'], PDO::PARAM_STR);
+        $res->bindParam(':description', $options['description'], PDO::PARAM_STR);
+        $res->bindParam(':is_new', $options['is_new'], PDO::PARAM_INT);
+        $res->bindParam(':status', $options['status'], PDO::PARAM_INT);
+        $res->bindParam(':id', $id, PDO::PARAM_INT);
+
+        return $res->execute();
+    }
+    /**
+     * Удаление товара(админка)
+     *
+     * @param $id
+     * @return bool
+     */
+    public static function deleteProductById ($id) {
+        $con = Connection::make();
+
+        $sql = "
+                DELETE FROM products WHERE id = :id
+                ";
+
+        $res = $con->prepare($sql);
+        $res->bindParam(':id', $id, PDO::PARAM_INT);
+        return $res->execute();
+    }
+
+
 }
