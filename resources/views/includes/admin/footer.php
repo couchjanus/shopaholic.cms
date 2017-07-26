@@ -19,5 +19,6 @@ $('body').on("click", "nav ul li a", function(){
 });
 
 </script>
+<script src="/js/main.js"></script>
 </body>
 </html>

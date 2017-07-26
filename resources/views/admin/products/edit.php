@@ -27,6 +27,24 @@ include_once VIEWS.'/includes/admin/header.php';
             <p>Детальное описание</p>
             <textarea id="add_description" name="description"><?php echo $data['product']['description']?></textarea>
 
+            <p>Изображения</p>
+
+            <div id=filediv>
+              <?php
+              for($i=0; $i<count($data['images']); $i++)
+              {
+                  $j = $i+1;
+                  echo "<div class=abcd id=abcd{$j}>"."<img id=previewimg{$j}"." src=/media/products/{$data['product']['id']}/".$data['images'][$i]."><i class='fa fa-times'  aria-hidden='true'></i></div>";
+              }
+              ?>
+              <input name="file[]" id="file" style="display: none;" type="file">
+            </div>
+
+            <br/>
+
+            <input type="button" id="add_more" class="upload" value="Добавить больше файлов"/>
+            <input type="submit" value="Загрузить файл" name="submit" id="upload" class="upload"/>
+
             <p>Новинка</p>
             <select name="is_new">
                 <option value="1" <?php if($data['product']['is_new'] == 1) echo 'selected'?>>Да</option>

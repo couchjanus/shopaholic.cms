@@ -28,6 +28,12 @@ include_once VIEWS.'/includes/admin/header.php';
                 <p>Детальное описание</p>
                 <textarea id="add_description" name="description"></textarea>
 
+                <p>Изображения</p>
+                <div id="filediv"><input name="file[]" type="file" id="file"/></div><br/>
+
+                <input type="button" id="add_more" class="upload" value="Добавить больше файлов"/>
+                <input type="submit" value="Загрузить файл" name="submit" id="upload" class="upload"/>
+
                 <p>Новинка</p>
                 <select name="is_new">
                     <option value="1" selected>Да</option>

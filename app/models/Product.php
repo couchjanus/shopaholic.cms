@@ -190,5 +190,36 @@ class Product {
         return $res->execute();
     }
 
+    /**
+     * Возвращает путь к изображению
+     * @param integer $id
+     * @return string <p>Путь к изображению</p>
+     */
+    public static function getImages ($id) {
 
+        // Название изображения-пустышки
+        $noImage = 'no-image.jpg';
+
+        // Путь к изображению товара
+        $pathToProductImages = UDLOADPATH. '/' . $id. '/';
+
+        $filelist = array();
+          if ($handle = opendir($pathToProductImages)) {
+              while ($entry = readdir($handle)) {
+                  if ($entry!=='.' && $entry!=='..') {
+                      $filelist[] = $entry;
+                  }
+              }
+              closedir($handle);
+          }
+
+         if ($filelist) {
+            // Если изображение для товара существует
+            // Возвращаем изображения товара
+            return $filelist;
+        } else {
+        // Возвращаем изображения-пустышки
+         return array_push($filelist, $noImage);
+        }
+      }
 }
