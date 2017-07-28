@@ -24,7 +24,7 @@
 			<a data-title='Управление товарами' href="/admin/products">Products</a>
 		  </li>
 		  <li>
-			<a data-title='Управление категориями' href="/admin">Categories</a>
+			<a data-title='Управление категориями' href="/admin/categories">Categories</a>
 		  </li>
 		  <li>
 			<a data-title='Orders' href='/admin'>Orders</a>
@@ -33,10 +33,10 @@
 			<a data-title='Управление публикациями' href="/admin">Posts</a>
 		  </li>
 		  <li>
-			<a data-title='Управление пользователями' href="/admin">Users</a>
+			<a data-title='Управление пользователями' href="/admin/users">Users</a>
 		  </li>
 		  <li>
-			<a data-title='Управление roles' href="/admin">Roles</a>
+			<a data-title='Управление roles' href="/admin/roles">Roles</a>
 		  </li>
 		  <li>
 			<a data-title='Settings'>Settings</a>

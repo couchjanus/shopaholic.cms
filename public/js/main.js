@@ -8,6 +8,18 @@ $(document).ready(function() {
                 ));
     });
 
+$('#filedivo').on('click', '.fa-times', function(){
+    $imagefile =$(this).parent().children(":first").attr('src');
+    $(this).parent().remove();
+    $.ajax({
+      type: 'POST',
+      url: '/admin/deleteimage',
+      data: {
+              imagefile: $imagefile
+      }
+      });
+});
+
 $('body').on('change', '#file', function(){
             if (this.files && this.files[0]) {
                 abc += 1;

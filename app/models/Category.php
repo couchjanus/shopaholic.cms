@@ -15,7 +15,7 @@ class Category {
         $db = Connection::make();
         $db->exec("set names utf8");
 
-        $sql = "SELECT id, name, status FROM category
+        $sql = "SELECT id, name, status FROM categories
                 WHERE status = 1
                 ORDER BY id ASC";
 
@@ -53,7 +53,7 @@ class Category {
         $db = Connection::make();
 
         $sql = "
-                DELETE FROM category WHERE id = :id
+                DELETE FROM categories WHERE id = :id
                 ";
 
         $res = $db->prepare($sql);
@@ -73,7 +73,7 @@ class Category {
         $db->exec("set names utf8");
 
         $sql = "
-                INSERT INTO category(name, status)
+                INSERT INTO categories(name, status)
                 VALUES (:name, :status)
                 ";
 
@@ -95,7 +95,7 @@ class Category {
         $db = Connection::make();
         $db->exec("set names utf8");
 
-        $sql = "SELECT name, status FROM category
+        $sql = "SELECT name, status FROM categories
                 WHERE id = :id";
 
         $res = $db->prepare($sql);
@@ -121,7 +121,7 @@ class Category {
         $db->exec("set names utf8");
 
         $sql = "
-                UPDATE category
+                UPDATE categories
                 SET
                     name = :name,
                     status = :status

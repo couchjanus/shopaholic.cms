@@ -19,7 +19,16 @@ include_once VIEWS.'/includes/admin/header.php';
             <input required type="text" name="price" value="<?php echo $data['product']['price']?>">
 
             <p>Категория</p>
-            <input required type="text" name="category" value="<?php echo $data['product']['category']?>">
+            <select name="category">
+                <?php if (is_array($data['categories'])): ?>
+                    <?php foreach ($data['categories'] as $category): ?>
+                        <option value="<?php echo $category['id']; ?>"
+                            <?php if ($data['product']['category_id'] == $category['id']) echo ' selected'; ?>>
+                            <?php echo $category['name']; ?>
+                        </option>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+            </select>
 
             <p>Производитель</p>
             <input required type="text" name="brand" value="<?php echo $data['product']['brand']?>">
@@ -29,18 +38,18 @@ include_once VIEWS.'/includes/admin/header.php';
 
             <p>Изображения</p>
 
-            <div id=filediv>
+            <div id=filedivo>
               <?php
               for($i=0; $i<count($data['images']); $i++)
               {
                   $j = $i+1;
-                  echo "<div class=abcd id=abcd{$j}>"."<img id=previewimg{$j}"." src=/media/products/{$data['product']['id']}/".$data['images'][$i]."><i class='fa fa-times'  aria-hidden='true'></i></div>";
+                  echo "<div class=abcd>"."<img "." src=/media/products/{$data['product']['id']}/".$data['images'][$i]."><i class='fa fa-times'  aria-hidden='true'></i></div>";
               }
               ?>
-              <input name="file[]" id="file" style="display: none;" type="file">
+
             </div>
 
-            <br/>
+            <div id="filediv"><input name="file[]" type="file" id="file"/></div><br/>
 
             <input type="button" id="add_more" class="upload" value="Добавить больше файлов"/>
             <input type="submit" value="Загрузить файл" name="submit" id="upload" class="upload"/>
