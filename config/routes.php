@@ -46,3 +46,14 @@ $router->post('admin/users/edit/{id}', 'AdminUsersController@edit');
 
 $router->get('admin/users/delete/{id}', 'AdminUsersController@delete');
 $router->post('admin/users/delete/{id}', 'AdminUsersController@delete');
+
+$router->get('register', 'UsersController@signup');
+$router->post('register', 'UsersController@signup');
+
+$router->get('login', 'UsersController@login');
+$router->post('login', 'UsersController@login');
+
+$router->get('profile', 'ProfileController@index');
+
+$router->get('logout', 'UsersController@logout');
+$router->post('logout', 'UsersController@logout');

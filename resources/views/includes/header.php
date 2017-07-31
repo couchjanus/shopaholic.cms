@@ -10,7 +10,7 @@
 
 <body>
     <div class="fake-nav"></div>
-    <div id="nav">
+    <nav id="nav">
     <!--  START search input-->
       <div class="search-container">
             <input id="search-toggle" type="checkbox">
@@ -56,11 +56,23 @@
             <li class="item-menu logo">
               <a href="/"><?= APPNAME; ?><br><span><?= SLOGAN; ?></span></a>
             </li>
-            <li class="item-menu nav-icons">
+            <li class="nav-icons" id="navicons">
                 <label for="search-toggle"><i class="fa fa-search button-search" aria-hidden="true"></i></label>
-                <label for="modal-basket-toggle" id="cart_trigger"><i class="fa fa-shopping-bag" aria-hidden="true"></i></label>
-                <label for="modal-login-toggle"><i class="fa fa-user" aria-hidden="true"></i></label>
+                <label for="modal-basket-toggle" id="cart_trigger"><i class="fa fa-shopping-cart" aria-hidden="true"></i></label>
+                <label for="modal-login-toggle" class="animate"><i class="fa fa-user" aria-hidden="true"></i></label>
+                <dropdown>
+                  <input id="modal-login-toggle" type="checkbox">
+                  <ul class="animate">
+                    <?php if(User::isGuest()):?>
+                      <li class="animate"><a href="/register">SignUp<i class="fa fa-user-plus float-right"></i></a></li>
+                      <li class="animate"><a href="/login">LogIn<i class="fa fa-sign-in float-right"></i></a></li>
+                    <?php else:?>
+                      <li class="animate"><a href="/profile">Profile<i class="fa fa-user-circle float-right"></i></a></li>
+                      <li class="animate"><a href="/logout">LogOut<i class="fa fa-sign-out float-right"></i></a></li>
+                    <?php endif;?>
+                  </ul>
+                </dropdown>
             </li>
         </ul>
-    </div>
+    </nav>
     <!--  END NAVIGAION  -->
