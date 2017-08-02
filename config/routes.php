@@ -57,3 +57,6 @@ $router->get('profile', 'ProfileController@index');
 
 $router->get('logout', 'UsersController@logout');
 $router->post('logout', 'UsersController@logout');
+
+$router->get('catalog/page-{page}', 'CatalogController@index');
+$router->get('catalog', 'CatalogController@index');

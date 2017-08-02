@@ -7,21 +7,22 @@ date_default_timezone_set('Europe/Kiev');
 ini_set('display_errors',1);
 error_reporting(E_ALL);
 
-//Запускаем сессию
-session_start();
 require_once realpath(__DIR__).'/../config/app.php';
-require_once ROOT.'/core/Connection.php';
-require_once ROOT.'/core/Session.php';
-require_once CONTROLLERS.'/View.php';
-require_once CONTROLLERS.'/Controller.php';
-require_once MODELS.'/Category.php';
-require_once MODELS.'/Product.php';
-require_once MODELS.'/Role.php';
-require_once MODELS.'/User.php';
 
-require_once realpath(__DIR__).'/Request.php';
-require_once realpath(__DIR__).'/Router.php';
-$routesFile = ROOT.'/config/routes.php';
+// подключаем файлы ядра
+function autoloadsystem($class) {
+    $filename = ROOT . "/core/" . $class . ".php";
+    if(file_exists($filename)){
+       require $filename;
+    }
+    $filename = ROOT . "/app/models/" . $class . ".php";
+    if(file_exists($filename)){
+       require $filename;
+    }
+ }
 
-Router::load($routesFile)
-    ->direct(Request::uri(), REQUEST::method());
+spl_autoload_register("autoloadsystem");
+
+$app = new App();
+$app->init();
+

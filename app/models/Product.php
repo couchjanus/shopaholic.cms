@@ -222,4 +222,26 @@ class Product {
          return array_push($filelist, $noImage);
         }
       }
+
+     /**
+     * Общее кол-во товаров в магазине
+     *
+     * @return mixed
+     */
+    public static function getTotalProducts () {
+
+        // Соединение с БД
+        $db = Connection::make();
+
+        // Текст запроса к БД
+        $sql = "SELECT count(id) AS count FROM products WHERE status=1 ";
+
+        // Выполнение коменды
+        $res = $db->query($sql);
+
+        // Возвращаем значение count - количество
+        $row = $res->fetch();
+        return $row['count'];
+    }
+
 }
