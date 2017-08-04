@@ -1,7 +1,9 @@
 <?php
 include_once VIEWS.'/includes/header.php';
 ?>
-        <main>
+<div class="wrapper">
+  <main>
+
 
         <h1><?= $title;?></h1>
 
@@ -11,8 +13,8 @@ include_once VIEWS.'/includes/header.php';
            <li><a href="/profile/orders">Список покупок</a></li>
         </ul>
 
-        </main>
-
+    </main>
+</div>
 <?php
-
 include_once VIEWS.'/includes/footer.php';
+

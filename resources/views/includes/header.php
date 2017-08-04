@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>Shop</title>
     <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
@@ -49,7 +49,7 @@
                         <h3 class="title-sub-menu"><a href="contact">Contact</a></h3>
                     </li>
                     <li>
-                        <h3 class="title-sub-menu"><a href="catalog">Shop</a></h3>
+                        <h3 class="title-sub-menu"><a href="/catalog">Shop</a></h3>
                     </li>
                 </ul>
             </li>

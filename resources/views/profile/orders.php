@@ -1,9 +1,8 @@
 <?php
-
 include_once VIEWS.'/includes/header.php';
 ?>
-    
- <main>
+<div class="wrapper">
+  <main>
         <h1><?= $title;?></h1>
         <table>
             <tr>
@@ -57,6 +56,6 @@ include_once VIEWS.'/includes/header.php';
         </table>
 
  </main>
+</div>
 <?php
-
 include_once VIEWS.'/includes/footer.php';
