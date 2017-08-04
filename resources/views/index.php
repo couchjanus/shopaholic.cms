@@ -11,7 +11,7 @@ include_once VIEWS.'/includes/header.php';
               <?= $posts['content'];?>
             </div>
             <p>
-              <?= $posts['create_at'];?>
+              <?= $posts['created_at'];?>
             </p>
 <?php endif ?>
   </main>

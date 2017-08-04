@@ -244,4 +244,30 @@ class Product {
         return $row['count'];
     }
 
+    /**
+     * Выборка товаров по массиву id
+     *
+     * @param $arrayIds
+     * @return array
+     */
+    public static function getProductsByIds ($arrayIds) {
+
+        $con = Connection::make();
+
+        //Разбиваем пришедший массив в строку
+        $stringIds = implode(',', $arrayIds);
+
+        $sql = "
+                SELECT id, name, code, price FROM products
+                WHERE status = 1 AND id IN ($stringIds)
+                ";
+
+        $res = $con->query($sql);
+
+        $products = $res->fetchAll(PDO::FETCH_ASSOC);
+
+        return $products;
+    }
+
+
 }

@@ -49,7 +49,7 @@
                         <h3 class="title-sub-menu"><a href="contact">Contact</a></h3>
                     </li>
                     <li>
-                        <h3 class="title-sub-menu"><a href="/">Shop</a></h3>
+                        <h3 class="title-sub-menu"><a href="catalog">Shop</a></h3>
                     </li>
                 </ul>
             </li>

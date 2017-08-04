@@ -121,6 +121,7 @@ function toggle_panel_visibility(panel, body) {
                     window.location.href = d.url;
                 } else {
                     console.log(d.msg);
+                    console.log('Pay now');
                     $('.checkout-price').text($('.finalTotal').text());
                     $('.pay').slideToggle();
                 }

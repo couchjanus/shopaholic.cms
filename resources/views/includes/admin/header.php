@@ -27,7 +27,7 @@
 			<a data-title='Управление категориями' href="/admin/categories">Categories</a>
 		  </li>
 		  <li>
-			<a data-title='Orders' href='/admin'>Orders</a>
+			<a data-title='Orders' href='/admin/orders'>Orders</a>
 		  </li>
 		  <li>
 			<a data-title='Управление публикациями' href="/admin">Posts</a>

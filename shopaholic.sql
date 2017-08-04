@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 28, 2017 at 11:16 AM
+-- Generation Time: Aug 03, 2017 at 03:44 PM
 -- Server version: 5.5.57-0ubuntu0.14.04.1
 -- PHP Version: 7.1.7-1+ubuntu14.04.1+deb.sury.org+1
 
@@ -37,8 +37,28 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`, `status`) VALUES
-(1, 'nes', 1),
-(2, 'books', 1);
+(1, 'Планшеты', 1),
+(2, 'Ноутбуки', 1),
+(3, 'Телефоны', 1),
+(4, 'Наушники', 1),
+(5, 'Чехлы', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` int(11) NOT NULL,
+  `user_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_comment` text COLLATE utf8mb4_unicode_ci,
+  `user_id` int(11) DEFAULT NULL,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `products` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` int(11) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -87,7 +107,7 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `status`, `name`, `category_id`, `code`, `price`, `brand`, `description`, `is_new`, `is_recommended`) VALUES
-(2, 1, 'webdev test', 2, '222', 111, 'test', 'test', 1, 0);
+(2, 1, 'tets', 1, '123', 1234, 'test', 'test', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -124,6 +144,14 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `role_id`, `status`) VALUES
+(1, 'admin', 'admin@my.com', '$2y$10$fwoILjk7QMDFdj67tl76gOZOzCEt3E3F5irSKlLxdNbpD4NmL87/u', 1, 1),
+(2, 'Janus', 'janus@my.com', '$2y$10$9L2n3FK5Gy0fE83PQZOGIeQWT5E3BybExRp4FqBiHsbjCa6BQoayS', 2, 1);
+
+--
 -- Indexes for dumped tables
 --
 
@@ -131,6 +159,12 @@ CREATE TABLE `users` (
 -- Indexes for table `categories`
 --
 ALTER TABLE `categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -165,7 +199,12 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `posts`
 --
@@ -185,7 +224,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
