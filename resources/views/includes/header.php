@@ -16,8 +16,8 @@
             <input id="search-toggle" type="checkbox">
             <label class="search-backdrop" for="search-toggle"></label>
             <div class="search-content">
-                <form id="search-form" action="">
-                    <input type="search" class="input-search" placeholder="Input what you want to search" required>
+                <form id="search-form" method ='POST' action="/search" >
+                    <input type="search" class="input-search" placeholder="Input what you want to search" required name="query">
                     <button type="submit" id="searchsubmit" class="fa fa-search fa-4x"></button>
                 </form>
             </div>

@@ -78,3 +78,16 @@ $router->get('catalog', 'CatalogController@index');
 //оформление заказа
 $router->post('cart', 'CartController@index');
 $router->post('check', 'UsersController@actionCheck');
+
+$router->get('admin/posts', 'AdminPostController@index');
+$router->get('admin/posts/add', 'AdminPostController@add');
+$router->get('admin/posts/edit/{id}', 'AdminPostController@edit');
+$router->get('admin/posts/delete/{id}', 'AdminPostController@delete');
+$router->post('admin/posts/add', 'AdminPostController@add');
+$router->post('admin/posts/edit/{id}', 'AdminPostController@edit');
+$router->post('admin/posts/delete/{id}', 'AdminPostController@delete');
+
+
+$router->get('posts', 'PostsController@index');
+$router->get('post/{id}', 'PostsController@view');
+$router->post('search', 'PostsController@search');

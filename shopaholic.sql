@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 03, 2017 at 03:44 PM
+-- Generation Time: Aug 06, 2017 at 12:45 PM
 -- Server version: 5.5.57-0ubuntu0.14.04.1
 -- PHP Version: 7.1.7-1+ubuntu14.04.1+deb.sury.org+1
 
@@ -59,6 +59,16 @@ CREATE TABLE `orders` (
   `products` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `status` int(11) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`id`, `user_name`, `user_phone`, `user_comment`, `user_id`, `date`, `products`, `status`) VALUES
+(1, 'janus', '1234567', 'test ', 2, '2017-08-04 06:05:44', '\"[{\\\"id\\\":\\\"2\\\",\\\"quantity\\\":\\\"1\\\"}]\"', 1),
+(2, 'janus', '1234567', 'test ', 2, '2017-08-04 06:05:45', '\"[{\\\"id\\\":\\\"2\\\",\\\"quantity\\\":\\\"1\\\"}]\"', 1),
+(3, 'janus', '1234567', 'test ', 2, '2017-08-04 06:05:48', '\"[{\\\"id\\\":\\\"2\\\",\\\"quantity\\\":\\\"1\\\"}]\"', 1),
+(4, 'Janus', '1234567', 'Hello', 2, '2017-08-04 12:15:48', '\"[{\\\"id\\\":\\\"2\\\",\\\"quantity\\\":\\\"1\\\"}]\"', 2);
 
 -- --------------------------------------------------------
 
@@ -204,7 +214,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `posts`
 --

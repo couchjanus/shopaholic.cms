@@ -30,7 +30,7 @@
 			<a data-title='Orders' href='/admin/orders'>Orders</a>
 		  </li>
 		  <li>
-			<a data-title='Управление публикациями' href="/admin">Posts</a>
+			<a data-title='Управление публикациями' href="/admin/posts">Posts</a>
 		  </li>
 		  <li>
 			<a data-title='Управление пользователями' href="/admin/users">Users</a>
