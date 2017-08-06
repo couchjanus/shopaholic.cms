@@ -19,7 +19,7 @@
         <div class="checkout-header">
           <h1 class="checkout-title">
             Checkout Order
-            <span class="checkout-price">$10</span>
+            <span class="checkout-price">$0</span>
           </h1>
         </div>
         <p>
