@@ -91,3 +91,10 @@ $router->post('admin/posts/delete/{id}', 'AdminPostController@delete');
 $router->get('posts', 'PostsController@index');
 $router->get('post/{id}', 'PostsController@view');
 $router->post('search', 'PostsController@search');
+
+$router->get('comment', 'CommentController@index');
+$router->post('comment', 'CommentController@index');
+$router->get('contact', 'ContactController@index');
+$router->post('contact', 'ContactController@index');
+
+
