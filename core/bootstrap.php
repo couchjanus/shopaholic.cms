@@ -8,6 +8,7 @@ ini_set('display_errors',1);
 error_reporting(E_ALL);
 
 require_once realpath(__DIR__).'/../config/app.php';
+require_once realpath(__DIR__).'/StaticPage.php';
 
 // подключаем файлы ядра
 function autoloadsystem($class) {
